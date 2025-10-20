@@ -15,5 +15,5 @@ roNumPair.length;
 roNumPair.push(6); // 报错
 roNumPair.pop(); // 报错
 
-// 第二种写法：
+// 第二种写法：使用工具类型 Readonly<T>
 type t = Readonly<[number, string]>;
