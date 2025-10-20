@@ -6,13 +6,6 @@ let car: {
   chargeVoltage?: number;
 };
 
-type Car = {
-  make: string;
-  model: string;
-  year: number;
-  chargeVoltage?: number;
-};
-
 // 一旦声明了类型，对象赋值时，就不能缺少指定的属性，也不能有多余的属性
 car = { make: "Honda", model: "Accord" }; // 报错
 car = { make: "Honda", model: "Accord", year: 2017, x: 220 }; // 报错

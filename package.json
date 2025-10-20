@@ -1,0 +1,10 @@
+{
+  "name": "learn-typescript",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "tsc --watch --preserveWatchOutput"
+  },
+  "dependencies": {
+    "typescript": "5.9.3"
+  }
+}

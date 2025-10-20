@@ -1,6 +1,6 @@
 // 元组
 let myCar = [2002, "Toyota", "Corolla"];
-// const [year, make, model] = car; // 报错
+// const [year, make, model] = myCar; // 报错
 myCar = [2017, "Honda", "Accord", "Sedan"]; // 不报错
 
 let yourCar: [number, string, string] = [2002, "Toyota", "Corolla"];

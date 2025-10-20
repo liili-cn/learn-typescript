@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "dist", // where to put the TS files
+    "target": "ES2015", // JS language level (as a build target)
+    "moduleResolution": "Node", // Find cjs modules in node_modules
+
+    "strictPropertyInitialization": false
+  },
+  "include": ["."] // which files to compile
+}
