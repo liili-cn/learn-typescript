@@ -6,5 +6,5 @@
 
     "strictPropertyInitialization": false
   },
-  "include": ["."] // which files to compile
+  "include": ["src"] // which files to compile
 }
