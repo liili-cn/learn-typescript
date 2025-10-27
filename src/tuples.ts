@@ -1,4 +1,5 @@
 // 元组
+// 需要显式声明元组的类型
 let myCar = [2002, "Toyota", "Corolla"];
 // const [year, make, model] = myCar; // 报错
 myCar = [2017, "Honda", "Accord", "Sedan"]; // 不报错
@@ -17,3 +18,6 @@ roNumPair.pop(); // 报错
 
 // 第二种写法：使用工具类型 Readonly<T>
 type t = Readonly<[number, string]>;
+
+export { myCar, yourCar, roNumPair, year, make, model };
+export { type t };

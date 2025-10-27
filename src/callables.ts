@@ -5,7 +5,7 @@ interface TwoNumberCalculation {
 
 type TwoNumberCalc = (x: number, y: number) => number;
 
-const add2: TwoNumberCalculation = (a, b) => a + b;
+const add: TwoNumberCalculation = (a, b) => a + b;
 
 const subtract: TwoNumberCalc = (x, y) => x - y;
 
@@ -14,18 +14,18 @@ function printFormattedJSON(obj: string[]) {
   console.log(JSON.stringify(obj, null, "  "));
 }
 
-const xx = printFormattedJSON(["hello", "world"]);
+const x = printFormattedJSON(["hello", "world"]);
 
 function invokeInFourSeconds(callback: () => undefined) {
   setTimeout(callback, 4000);
 }
-function invokeInFiveSeconds2(callback: () => void) {
+function invokeInFiveSeconds(callback: () => void) {
   setTimeout(callback, 5000);
 }
 
 const values: number[] = [];
 invokeInFourSeconds(() => values.push(4)); // 报错
-invokeInFiveSeconds2(() => values.push(4));
+invokeInFiveSeconds(() => values.push(4));
 
 // 构造签名：描述使用 `new` 关键字进行实例化时，对应的类型所应满足的结构要求
 interface DateConstructor {
@@ -60,9 +60,11 @@ function myClickHandler(this: HTMLButtonElement, event: Event) {
 myClickHandler;
 
 const myButton = document.getElementsByTagName("button")[0];
-const boundHandler = myClickHandler.bind(myButton);
-boundHandler(new Event("click")); // bound version: ok
-myClickHandler.call(myButton, new Event("click")); // alse ok
+if (myButton) {
+  const boundHandler = myClickHandler.bind(myButton);
+  boundHandler(new Event("click")); // bound version: ok
+  myClickHandler.call(myButton, new Event("click")); // alse ok
+}
 
 // 函数类型最佳实践 - 显示定义返回类型
 async function getData(url: string): Promise<{ properties: string[] }> {
@@ -81,3 +83,27 @@ function loadData() {
     console.log(result.properties.join(", "));
   });
 }
+
+export {
+  add,
+  subtract,
+  x,
+  printFormattedJSON,
+  invokeInFourSeconds,
+  invokeInFiveSeconds,
+  MyDateConstructor,
+  d,
+  myFrame,
+  myForm,
+  myClickHandler,
+  myButton,
+  getData,
+  loadData,
+};
+export {
+  type TwoNumberCalculation,
+  type TwoNumberCalc,
+  type DateConstructor,
+  type FormSubmitHandler,
+  type MessageHandler,
+};

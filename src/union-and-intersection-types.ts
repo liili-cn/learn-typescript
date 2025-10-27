@@ -47,16 +47,6 @@ first;
 // ^?
 second;
 // ^?
-// 使用类型守卫进行类型收窄
-if (second instanceof Error) {
-  // In this branch of your code, second is an Error
-  second;
-  // ^?
-} else {
-  // In this branch of your code, second is the user info
-  second;
-  // ^?
-}
 
 // `Evens | OneThroughFive` 可以接收宽范围的值，
 // 但由于允许这种灵活性，它不满足大多数 `print*` 函数的类型检查要求
@@ -78,6 +68,17 @@ printLowNumber(x); // 报错
 printEvenNumberUnder5(x); // 报错
 printNumber(x);
 
+// 使用类型守卫进行类型收窄
+if (second instanceof Error) {
+  // In this branch of your code, second is an Error
+  second;
+  // ^?
+} else {
+  // In this branch of your code, second is the user info
+  second;
+  // ^?
+}
+
 // 标记联合类型
 if (first === "error") {
   // In this branch of your code, second is an Error
@@ -96,7 +97,8 @@ if (first === "error") {
 // OneThroughFive & Evens => { 2, 4 }
 
 // 交叉类型
-// 与联合类型相反，接收非常窄范围的值，但正因如此，它可以满足下面所有四个 `print*` 函数的类型检查要求
+// 与联合类型相反，接收非常窄范围的值，
+// 但正因如此，它可以满足下面所有四个 `print*` 函数的类型检查要求
 let y = 4 as Evens & OneThroughFive;
 let evenAndLowNumber: Evens & OneThroughFive;
 
@@ -110,3 +112,25 @@ printEven(y);
 printLowNumber(y);
 printEvenNumberUnder5(y);
 printNumber(y);
+
+export {
+  lowNumber,
+  evenNumber,
+  evenOrLowNumber,
+  flipCoin,
+  outcome,
+  success,
+  fail,
+  maybeGetUserInfo,
+  outcome2,
+  first,
+  second,
+  printEven,
+  printLowNumber,
+  printEvenNumberUnder5,
+  printNumber,
+  x,
+  y,
+  evenAndLowNumber,
+};
+export { type OneThroughFive, type Evens };

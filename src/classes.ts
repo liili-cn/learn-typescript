@@ -1,5 +1,5 @@
 // 字段和方法
-class Car2 {
+class Car {
   make: string;
   model: string;
   year: number;
@@ -10,12 +10,12 @@ class Car2 {
   }
 }
 
-let sedan = new Car2("Honda", "Accord", 2017);
+let sedan = new Car("Honda", "Accord", 2017);
 sedan.activateTurnSignal("left"); // 报错
-new Car2(2017, "Honda", "Accord"); // 报错
+new Car(2017, "Honda", "Accord"); // 报错
 
 // 静态字段、静态方法、静态块
-class Car3 {
+class Car2 {
   // Static stuff
   static nextSerialNumber = 100;
   static generateSerialNumber() {
@@ -34,7 +34,7 @@ class Car3 {
   make: string;
   model: string;
   year: number;
-  serialNumber = Car3.generateSerialNumber();
+  serialNumber = Car2.generateSerialNumber();
   constructor(make: string, model: string, year: number) {
     this.make = make;
     this.model = model;
@@ -44,13 +44,13 @@ class Car3 {
     return `${this.make} ${this.model} ${this.year} - #${this.serialNumber}`;
   }
 }
-console.log(new Car3("Honda", "Accord", 2017));
+console.log(new Car2("Honda", "Accord", 2017));
 // > "Honda Accord 2017 - #100
-console.log(new Car3("Toyota", "Camry", 2022));
+console.log(new Car2("Toyota", "Camry", 2022));
 // > "Toyota Camry 2022 - #101
 
 // 访问修饰符关键字
-class Car4 {
+class Car3 {
   // Static stuff
   private static nextSerialNumber: number;
   private static generateSerialNumber() {
@@ -68,7 +68,7 @@ class Car4 {
   make: string;
   model: string;
   year: number;
-  private _serialNumber = Car4.generateSerialNumber();
+  private _serialNumber = Car3.generateSerialNumber();
   protected get serialNumber() {
     return this._serialNumber;
   }
@@ -79,10 +79,10 @@ class Car4 {
   }
 }
 
-class Sedan extends Car4 {
+class Sedan extends Car3 {
   getSedanInformation() {
     this._serialNumber; // 报错
-    Car4.generateSerialNumber(); // 报错
+    Car3.generateSerialNumber(); // 报错
     const { make, model, year, serialNumber } = this;
     return { make, model, year, serialNumber };
   }
@@ -95,7 +95,7 @@ s.serialNumber; // 报错
 // TypeScript 5 开始支持静态私有 `#fields`
 
 // readonly
-class Car5 {
+class Car4 {
   static #nextSerialNumber: number;
   static #generateSerialNumber() {
     return this.#nextSerialNumber++;
@@ -104,7 +104,7 @@ class Car5 {
   public make: string;
   public model: string;
   public year: number;
-  readonly #serialNumber = Car5.#generateSerialNumber();
+  readonly #serialNumber = Car4.#generateSerialNumber();
 
   constructor(make: string, model: string, year: number) {
     this.make = make;
@@ -119,26 +119,28 @@ class Car5 {
 
 // 参数属性
 // 为构造函数提供了更简洁的语法
-class Car6 {
+class Car5 {
   constructor(public make: string, public model: string, public year: number) {}
 }
 
-const myCar2 = new Car6("Honda", "Accord", 2017);
-myCar2.make;
+const myCar = new Car5("Honda", "Accord", 2017);
+myCar.make;
 
 // 重写
-class Car7 {
+class Car6 {
   honk() {
     console.log("beep");
   }
 }
 
-class Truck2 extends Car7 {
+class Truck extends Car6 {
   override hoonk() {
     // 报错
     console.log("BEEP");
   }
 }
 
-const t = new Truck2();
+const t = new Truck();
 t.honk(); // "beep"
+
+export { Car, sedan, Car2, Car3, Sedan, s, Car4, Car5, myCar, Car6, Truck, t };

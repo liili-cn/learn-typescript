@@ -59,8 +59,8 @@
     // "strictBuiltinIteratorReturn": true,
     // "strictFunctionTypes": true,
     // "strictNullChecks": true,
-    // "strictPropertyInitialization": true,
-    // "noImplicitAny": true,
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
     // "noImplicitThis": true,
     // "useUnknownInCatchVariables": true,
     "allowUnreachableCode": false,
@@ -101,10 +101,10 @@
     // Interop Constraints
     "esModuleInterop": true,
     // "allowSyntheticDefaultImports": true,
-    "erasableSyntaxOnly": true,
+    "erasableSyntaxOnly": false,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "isolatedDeclarations": true,
+    "isolatedDeclarations": false,
     "preserveSymlinks": true,
     "verbatimModuleSyntax": true,
 

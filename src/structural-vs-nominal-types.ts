@@ -1,4 +1,4 @@
-// 名义类型
+// 名义类型系统都是关于名称的
 // public class Car {
 //   String make;
 //   String model;
@@ -15,7 +15,7 @@
 // //     what `checkCar` wants as an argument?
 // CarChecker.checkCar(myCar);
 
-// 结构化类型
+// 结构化类型系统都是关于结构的
 class Car {
   make: string;
   model: string;
@@ -36,16 +36,18 @@ const vehicle = {
   year: 2017,
 };
 
-function printCar2(car: { make: string; model: string; year: number }) {
+function printCar(car: { make: string; model: string; year: number }) {
   console.log(`${car.make} ${car.model} (${car.year})`);
 }
 
-printCar2(new Car()); // Fine
-printCar2(new Truck()); // Fine
-printCar2(vehicle); // Fine
+printCar(new Car()); // Fine
+printCar(new Truck()); // Fine
+printCar(vehicle); // Fine
 
 // 传递给 printCar 的参数可以描述为
 // { all values which contain
 //     a make  property which is a string
 // and a model property which is a string
 // and a year  property which is a number }
+
+export {Car, Truck, vehicle, printCar};

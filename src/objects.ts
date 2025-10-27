@@ -35,6 +35,7 @@ if (car.chargeVoltage !== undefined) {
 }
 
 // 属性名的索引类型
+// 表示字典的类型，其中一致类型的值可以通过键检索
 const phones: {
   [k: string]: {
     country: string;
@@ -42,3 +43,5 @@ const phones: {
     number: string;
   };
 } = {};
+
+export { car, printCar, phones };

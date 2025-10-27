@@ -82,7 +82,7 @@ function assertsIsCarLike(valueToTest: any): asserts valueToTest is CarLike {
 }
 
 // 结合 `#field` 使用
-class Car8 {
+class Car {
   static #nextSerialNumber: number = 100;
   static #generateSerialNumber() {
     return this.#nextSerialNumber++;
@@ -114,14 +114,14 @@ class Bird {
   fly(): void {}
 }
 
-let val2 = {} as any;
+let val = {} as any;
 switch (true) {
-  case val2 instanceof Bird:
-    val2.fly();
+  case val instanceof Bird:
+    val.fly();
 
     break;
-  case val2 instanceof Fish:
-    val2.swim();
+  case val instanceof Fish:
+    val.swim();
 
     break;
 }
@@ -140,3 +140,16 @@ const usHolidays = {
 } satisfies Holidays;
 
 usHolidays;
+
+export {
+  value,
+  maybeCar,
+  isCarLike,
+  assertsIsCarLike,
+  Car,
+  Fish,
+  Bird,
+  val,
+  usHolidays,
+};
+export { type CarLike, type DateLike, type Holidays };

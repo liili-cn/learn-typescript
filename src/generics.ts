@@ -18,8 +18,8 @@ const dict1 = listToDict(
   [{ name: "Mike" }, { name: "Mark" }],
   (item) => item.name
 );
+dict1["Mike"];
 console.log(dict1);
-dict1.Mike;
 
 const phoneList = [
   { customerId: "0001", areaCode: "321", num: "123-4566" },
@@ -30,7 +30,7 @@ const phoneList = [
 ];
 
 const dict2 = listToDict(phoneList, (p) => p.customerId);
-dict2.fax;
+dict2["fax"];
 console.log(dict2);
 
 // 泛型最佳实践 - 每个类型参数至少使用两次
@@ -39,5 +39,7 @@ function returnAs<T>(arg: any): T {
 }
 
 // 🚨 DANGER! 🚨
-const first2 = returnAs<number>(window);
+const first = returnAs<number>(window);
 const sameAs = window as any as number;
+
+export { listToDict, dict1, dict2, phoneList, returnAs, first, sameAs };

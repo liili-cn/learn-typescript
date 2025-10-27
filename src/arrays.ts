@@ -9,7 +9,10 @@ type Cars = { make: string; model: string; year: number }[];
 let arr: Array<number | string>;
 
 // 多维数组
-var multi: number[][] = [
+let multi: number[][] = [
   [1, 2, 3],
   [23, 24, 25],
 ];
+
+export { fileExtensions, cars, arr, multi };
+export { type FileExtensios, type Cars };
