@@ -1,6 +1,21 @@
 {
   "name": "learn-typescript",
   "version": "0.0.0",
+  "private": true,
+  "homepage": "https://github.com/liili-cn/learn-typescript#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liili-cn/learn-typescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liili-cn/learn-typescript/issues",
+    "email": "liili_cn@hotmail.com"
+  },
+  "author": {
+    "name": "Liili",
+    "email": "liili_cn@hotmail.com",
+    "url": "https://github.com/liili-cn"
+  },
   "scripts": {
     "dev": "tsc --watch --preserveWatchOutput"
   },

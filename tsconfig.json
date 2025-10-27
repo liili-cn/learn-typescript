@@ -1,10 +1,114 @@
 {
+  // "extends": "",
+  // "files": [],
+  "include": ["./src/*.ts", "./src/*.tsx"],
+  // "exclude": ["node_modules", "bower_components", "jspm_packages", "outDir"],
+  // "references": [],
   "compilerOptions": {
-    "outDir": "dist", // where to put the TS files
-    "target": "ES2015", // JS language level (as a build target)
-    "moduleResolution": "Node", // Find cjs modules in node_modules
+    // Projects
+    // "composite": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo",
+    // "disableReferencedProjectLoad": false,
+    // "disableSolutionSearching": false,
+    // "disableSourceOfProjectReferenceRedirect": false,
 
-    "strictPropertyInitialization": false
-  },
-  "include": ["src"] // which files to compile
+    // Language and Environment
+    "target": "ES2015",
+    // "noLib": false,
+    // "lib": [],
+    // "jsx": "preserve",
+    // "jsxFactory": "React.createElement",
+    // "jsxFragmentFactory": "React.Fragment",
+    // "jsxImportSource": "solid-js",
+    // "emitDecoratorMetadata": false,
+    // "experimentalDecorators": false,
+    // "libReplacement": false,
+    "moduleDetection": "force",
+    "useDefineForClassFields": true,
+
+    // Modules
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
+    "paths": {},
+    // "rootDirs": [],
+    "typeRoots": [],
+    "types": [],
+    // "allowArbitraryExtensions": false,
+    // "allowImportingTsExtensions": false,
+    // "allowUmdGlobalAccess": false,
+    // "resolveJsonModule": false,
+    // "resolvePackageJsonExports": true,
+    // "resolvePackageJsonImports": true,
+    // "customConditions": [],
+    // "moduleSuffixes": [],
+    // "noResolve": false,
+    // "noUncheckedSideEffectImports": false,
+    // "rewriteRelativeImportExtensions": false,
+
+    // JavaScript Support
+    // "allowJs": false,
+    // "checkJs": false,
+    // "maxNodeModuleJsDepth": 0,
+
+    // Type Checking
+    "strict": true,
+    // "alwaysStrict": true,
+    // "strictBindCallApply": true,
+    // "strictBuiltinIteratorReturn": true,
+    // "strictFunctionTypes": true,
+    // "strictNullChecks": true,
+    // "strictPropertyInitialization": true,
+    // "noImplicitAny": true,
+    // "noImplicitThis": true,
+    // "useUnknownInCatchVariables": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    // Emit
+    "noEmit": false,
+    "noEmitOnError": true,
+    // "rootDir": "",
+    "outDir": "dist",
+    // "outFile": "",
+    "declaration": true,
+    // "emitDeclarationOnly": false,
+    // "declarationDir": "",
+    // "declarationMap": false,
+    // "sourceMap": false,
+    // "sourceRoot": "",
+    // "mapRoot": "",
+    // "inlineSourceMap": false,
+    // "inlineSources": false,
+    // "noEmitHelpers": false,
+    // "importHelpers": false,
+    // "downlevelIteration": false,
+    // "emitBOM": false,
+    // "newLine": "lf",
+    // "preserveConstEnums": false,
+    "removeComments": false,
+    "stripInternal": true,
+
+    // Interop Constraints
+    "esModuleInterop": true,
+    // "allowSyntheticDefaultImports": true,
+    "erasableSyntaxOnly": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "isolatedDeclarations": true,
+    "preserveSymlinks": true,
+    "verbatimModuleSyntax": true,
+
+    // Completeness
+    "skipLibCheck": true
+  }
 }
